@@ -1,0 +1,18 @@
+v {xschem version=3.0.0 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -30 -10 -30 10 {}
+L 4 30 -10 30 10 {}
+L 4 30 0 50 0 {}
+L 4 -30 -10 30 -10 {}
+L 4 -30 10 30 10 {}
+B 5 47.5 -2.5 52.5 2.5 {name=Vbias dir=out }
+T {@symname} -31 -26 0 0 0.3 0.3 {}
+T {@name} -25 -2 0 0 0.2 0.2 {}
+T {Vbias} 25 -4 0 1 0.2 0.2 {}
