@@ -10,10 +10,6 @@ N 30 -280 30 -240 {
 lab=#net1}
 N 30 -280 140 -280 {
 lab=#net1}
-N 200 -280 210 -280 {
-lab=#net2}
-N 210 -280 210 -110 {
-lab=#net2}
 N 210 -50 210 -10 {
 lab=GND}
 N 210 -10 480 -10 {
@@ -22,30 +18,45 @@ N 30 -100 30 -10 {
 lab=GND}
 N 30 -10 210 -10 {
 lab=GND}
-N 210 -280 330 -280 {
-lab=#net2}
 N 480 -10 600 -10 {
 lab=GND}
 N 390 -280 450 -280 {
-lab=#net3}
+lab=#net2}
 N 510 -280 640 -280 {
-lab=#net4}
+lab=#net3}
 N 640 -280 640 -240 {
-lab=#net4}
+lab=#net3}
 N 640 -280 730 -280 {
-lab=#net4}
+lab=#net3}
 N 730 -280 730 -240 {
-lab=#net4}
+lab=#net3}
 N 730 -180 730 -10 {
 lab=GND}
 N 600 -10 730 -10 {
 lab=GND}
 N 640 -180 640 -150 {
-lab=#net5}
+lab=#net4}
 N 640 -150 640 -120 {
-lab=#net5}
+lab=#net4}
 N 640 -60 640 -10 {
 lab=GND}
+N 140 -280 180 -280 {
+lab=#net1}
+N 240 -280 330 -280 {
+lab=#net5}
+N 240 -280 240 -140 {
+lab=#net5}
+N 210 -140 240 -140 {
+lab=#net5}
+N 210 -140 210 -110 {
+lab=#net5}
+N 130 -240 130 -200 {}
+N 130 -240 210 -240 {}
+N 130 -140 130 -10 {}
+N 130 -220 200 -220 {}
+N 200 -220 200 -140 {}
+N 170 -140 200 -140 {}
+N 170 -140 170 -80 {}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 190 -80 0 0 {name=M1
 L=0.5
 W=1
@@ -60,7 +71,7 @@ sa=0 sb=0 sd=0
 model=nfet_g5v0d10v5
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_g5v0d10v5.sym} 170 -260 1 1 {name=M2
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 210 -260 3 0 {name=M2
 L=0.5
 W=1
 nf=1
@@ -101,3 +112,4 @@ value=1.59
 footprint=1206
 device=resistor
 m=1}
+C {devices/vsource.sym} 130 -170 0 0 {name=V2 value=pulse(0 3.6 0 0.01u 0.01u 0.446u 1u)}
