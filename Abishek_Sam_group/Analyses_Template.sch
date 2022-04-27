@@ -118,3 +118,22 @@ plot db(v(Vout)) 180*cph(v(Vout))/pi
 write myschematic.raw all
 .endc
 "}
+C {devices/code_shown.sym} 590 -190 0 0 {name=Power Calculation
+only_toplevel=true
+place=end
+value="
+.tran 1u 200u
+.save all
+
+ .control
+        run
+        meas tran idd_ave INTEG i(Vin) from=190u to=191u
+        meas tran ido_ave INTEG i(VIout) from=190u to=191u
+        let power_in = (idd_ave)*3.6
+        let power_out = (ido_ave)*1.8
+        let nu = power_out/power_in*100
+        print power_in
+        print power_out
+        print nu
+ .endc
+"}
